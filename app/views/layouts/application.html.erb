@@ -22,7 +22,7 @@
         <nav class="navbar fixed-top navbar-dark bg-dark">
           <div class="container">
             <b><%= link_to 'Doctor Directory', doctors_path, class: "navbar-brand" %></b>
-            <%= link_to 'Home', doctors_path, class: "my-nav nav-link" %>
+            <%= link_to 'Home', doctors_path, class: "my-nav nav-link" if user_signed_in? %>
             <%= link_to 'Male Doctors', doctors_list_male_path, class: "my-nav nav-link" if user_signed_in? %>
             <%= link_to 'Female Doctors', doctors_list_female_path, class: "my-nav nav-link" if user_signed_in? %>
             <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "my-nav nav-link" if user_signed_in? %>
@@ -30,8 +30,20 @@
         </nav>
 
     <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
+    <% if notice %>
+    	<div class='alert alert-success'>
+    		<%= notice %>
+    	</div>
+    <% end %>
+
+    <% if alert %>
+    	<div class='alert alert-danger'>
+    		<%= alert %>
+    	</div>
+    <% end %>
+
     <%= yield %>
+    
   </body>
 </html>

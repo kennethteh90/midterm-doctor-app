@@ -13,6 +13,7 @@ class DoctorsController < ApplicationController
   def create
     @doctor = Doctor.new(doctor_params)
     if @doctor.save
+      flash[:notice] = 'Profile added successfully!'
       redirect_to doctors_path
     else
       render :new
@@ -31,6 +32,7 @@ class DoctorsController < ApplicationController
   def update
     prepare_doctor
     if @doctor.update(doctor_params)
+      flash[:notice] = 'Profile updated successfully!'
       redirect_to doctors_path
     else
       render :edit

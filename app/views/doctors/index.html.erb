@@ -7,14 +7,14 @@
       <th>Username</th>
       <th>Address</th>
       <th>Gender</th>
-      <th></th>
+      <th colspan="3"></th>
     </thead>
     <tbody>
       <% @doctors.each do |doctor| %>
       <tr>
-        <td><%= doctor.username %></td>
-        <td><%= doctor.address %></td>
-        <td><%= doctor.gender.capitalize %></td>
+        <td class="align-middle"><%= doctor.username %></td>
+        <td class="align-middle"><%= doctor.address %></td>
+        <td class="align-middle"><%= doctor.gender.capitalize %></td>
         <td><%= link_to 'View Profile', doctor_path(doctor), class: "btn btn-outline-primary" %></td>
         <td><%= link_to 'Edit Profile', edit_doctor_path(doctor), class: "btn btn-outline-secondary" %></td>
         <td><%= link_to 'Remove', doctor_path(doctor), method: :delete, class: "btn btn-danger" %></td>
