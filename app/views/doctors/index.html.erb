@@ -10,9 +10,9 @@
   <tbody>
     <% @doctors.each do |doctor| %>
     <tr>
-      <td>doctor.username</td>
-      <td>doctor.address</td>
-      <td>doctor.gender</td>
+      <td><%= doctor.username %></td>
+      <td><%= doctor.address %></td>
+      <td><%= doctor.gender %></td>
       <!-- Insert logic for Show, edit, destroy if logged in later -->
     </tr>
     <% end %>
