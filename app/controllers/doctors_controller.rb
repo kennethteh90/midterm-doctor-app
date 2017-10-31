@@ -1,5 +1,7 @@
 class DoctorsController < ApplicationController
 
+  before_action :authenticate_user!, only: [:show, :destroy, :edit, :update]
+
   def index
     @doctors = Doctor.all
   end
@@ -37,6 +39,7 @@ class DoctorsController < ApplicationController
 
   def destroy
     Doctor.destroy(params[:id])
+    redirect_to doctors_path
   end
 
   private

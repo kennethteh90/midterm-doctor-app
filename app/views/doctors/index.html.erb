@@ -1,24 +1,28 @@
 <h1 class="jumbotron">Welcome to the Doctor Directory</h1>
 
-<table class="table">
-  <thead>
-    <th>Username</th>
-    <th>Address</th>
-    <th>Gender</th>
-    <th></th>
-  </thead>
-  <tbody>
-    <% @doctors.each do |doctor| %>
-    <tr>
-      <td><%= doctor.username %></td>
-      <td><%= doctor.address %></td>
-      <td><%= doctor.gender %></td>
-      <!-- Insert logic for Show, edit, destroy if logged in later -->
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container">
 
-<%= link_to 'Add Doctor', new_doctor_path %>
+  <table class="table">
+    <thead>
+      <th>Username</th>
+      <th>Address</th>
+      <th>Gender</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <% @doctors.each do |doctor| %>
+      <tr>
+        <td><%= doctor.username %></td>
+        <td><%= doctor.address %></td>
+        <td><%= doctor.gender %></td>
+        <td><%= link_to 'View Profile', doctor_path(doctor), class: "btn btn-outline-primary" %></td>
+        <td><%= link_to 'Edit Profile', edit_doctor_path(doctor), class: "btn btn-outline-secondary" %></td>
+        <td><%= link_to 'Remove', doctor_path(@doctor), method: :delete, class: "btn btn-danger" %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<!-- Insert logic for Male and Female list if logged in later -->
+  <%= link_to 'Add Doctor', new_doctor_path, class: "btn btn-success" %>
+
+</div>

@@ -1,3 +1,15 @@
 // Place all the styles related to the doctors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  padding-top: 50px;
+}
+
+.my-nav {
+  color: white;
+  font-weight: bold;
+}
+.my-nav:hover {
+  color: orange;
+}
