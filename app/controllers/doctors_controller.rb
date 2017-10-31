@@ -42,6 +42,14 @@ class DoctorsController < ApplicationController
     redirect_to doctors_path
   end
 
+  def list_male
+    @doctors = Doctor.where(gender: 'male')
+  end
+
+  def list_female
+    @doctors = Doctor.where(gender: 'female')
+  end
+
   private
 
     def prepare_doctor

@@ -13,7 +13,7 @@
       <tr>
         <td><%= @doctor.username %></td>
         <td><%= @doctor.address %></td>
-        <td><%= @doctor.gender %></td>
+        <td><%= @doctor.gender.capitalize %></td>
         <td><%= link_to 'Edit Profile', edit_doctor_path(@doctor), class: "btn btn-outline-secondary" %></td>
         <td><%= link_to 'Remove', doctor_path(@doctor), method: :delete, class: "btn btn-danger" %></td>
       </tr>
