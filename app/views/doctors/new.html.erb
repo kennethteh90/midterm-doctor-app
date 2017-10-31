@@ -1,0 +1,10 @@
+<h1>Add Doctor</h1>
+
+<%= simple_form_for @doctor do |f| %>
+  <%= f.input :username %>
+  <%= f.input :address %>
+  <%= f.input :gender %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to 'Back to home', doctors_path %>
