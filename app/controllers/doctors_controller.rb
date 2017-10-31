@@ -1,6 +1,6 @@
 class DoctorsController < ApplicationController
 
-  before_action :authenticate_user!, only: [:show, :destroy, :edit, :update]
+  before_action :authenticate_user!, only: [:show, :destroy, :edit, :update, :list_male, :list_female]
 
   def index
     @doctors = Doctor.all
